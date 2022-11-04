@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import ToDo from './Components/ToDo.js';
+import './App.css';
+import InProgress from './Components/InProgress'
+import Completed from './Components/Completed.js'
+ 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Project Manager</h1>
       </header>
+      <main className='mainscreen'>   
+        {
+          <ToDo/>
+        }
+        {
+          <InProgress/>
+        }
+        {
+          <Completed/>
+        }
+      </main>
     </div>
-  );
+  )
 }
 
 export default App;
