@@ -1,23 +1,37 @@
 
 import './styles.css'
+import { useState } from 'react'
 
-
-   
 const InProgress = ()=>{
 
-   const handleAddingListItme = () =>{
-    console.log("added")
+    const [InProgressList, setInpregressList] = useState([1,2,3,4,5])
+
+// function that adds a new item to the list 
+   const handleAddingListItem = () =>{
+    console.log(InProgressList)
    }
+
+    const handleDragging = () => {
+        console.log("dragged")
+   }
+
     return(
         <div className='bucketStyles'>
             <div className='bucketHeading'>
                 <h2>In Progress</h2>
-                <button onClick={handleAddingListItme}>+</button>
+                <button onClick={handleAddingListItem}>+</button>
             </div>
             <ul className='listStyles'>
-                <li><p>sups</p></li>
-                <li><p>sups</p></li>
-                <li><p>sups</p></li>  
+                {
+                  InProgressList.map((item,index)=>{
+                    return(
+                        <li draggable="true" onDrag={()=>console.log("dragged")} key={index}> 
+                            <p>{item}</p>
+                        </li>
+                    )
+                  })  
+                }  
+
             </ul>
         </div>
     )
