@@ -11,11 +11,21 @@ li{
     list-style: none;
 }
 
+li:active{
+    background-color: darkgray;
+}
+
 body{
     text-align: center;
     font-size: 125%;
     background-color: cadetblue;
     margin: 0 auto;
+}
+
+input{
+    background-color: aliceblue;
+    min-height: 2rem;
+    outline: none;
 }
 
 .mainscreen{
@@ -31,7 +41,7 @@ body{
 .bucketStyles{
     width: 30%;
     background-color: lightgray;
-    height: 90vh;   
+    height: auto;   
     margin: 2rem 0;
     border-radius: 10px;
     display: flex;
