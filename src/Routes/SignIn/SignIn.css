@@ -1,0 +1,20 @@
+
+.signIn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    background-color: goldenrod;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.signIn input, .signIn button{
+    background-color:blanchedalmond;
+}
+
+form{
+    background-color: white;
+}

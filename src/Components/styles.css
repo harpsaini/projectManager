@@ -1,18 +1,13 @@
-ul, li,p{
+ul, li,p,input{
     list-style: none;
     padding: 1rem 0;
     margin: 0;
 }
 
 li{
-    background-color: whitesmoke;
     width: 95%;
     margin: 0 auto;
     list-style: none;
-}
-
-li:active{
-    background-color: darkgray;
 }
 
 body{
@@ -20,33 +15,30 @@ body{
     font-size: 125%;
     background-color: cadetblue;
     margin: 0 auto;
+    text-align: center;
+}
+
+
+button{
+    min-height: 2rem;
+    border-radius: 10px;
 }
 
 input{
-    background-color: aliceblue;
-    min-height: 2rem;
+    width: 100%;
+    background-color: lightgray;
     outline: none;
-}
-
-.mainscreen{
-    background-color:rgb(57, 81, 63);
-    width: 90%;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    margin: 0 auto;
-
+    
 }
 
 .bucketStyles{
-    width: 30%;
-    background-color: lightgray;
+    width: 90%;
+    background-color: goldenrod;
     height: auto;   
-    margin: 2rem 0;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    
+    align-content: center;
 }
 
 .bucketHeading{

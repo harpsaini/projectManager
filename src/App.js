@@ -1,28 +1,36 @@
 
-import ToDo from './Components/ToDo.js';
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route,Link } from 'react-router-dom'
+import SignIn from './Routes/SignIn/SignIn.js';
+import Register from './Routes/Register/Register.js';
+import LoggedIn from "./Routes/LoggedIn/LoggedIn.js"
 import './App.css';
-import InProgress from './Components/InProgress'
-import Completed from './Components/Completed.js'
+
  
-function App() {
+const App = () => {
+
+  const[isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
-    <div className="App">
-      <header>
-        <h1>Project Manager</h1>
-      </header>
-      <main className='mainscreen'>   
-        {
-          <ToDo/>
-        }
-        {
-          <InProgress/>
-        }
-        {
-          <Completed/>
-        }
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <header>
+          <nav>
+            <h1>Project Manager</h1>
+          </nav>
+        </header>
+        <Routes>
+            <Route exact path='/' element={<SignIn/>} setIsLoggedIn={setIsLoggedIn}/>
+            <Route path='/register' element={<Register/>} />
+            <Route path='/loggedin' element={<LoggedIn/>} />
+         </Routes>
+      </div>
+    </Router>
+  
   )
 }
 
 export default App;
+
+//need to launch loggedin page. 
+// need to launch register page. 
