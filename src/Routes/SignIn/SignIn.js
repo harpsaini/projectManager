@@ -1,13 +1,15 @@
 
+import { Link } from 'react-router-dom';
 import './SignIn.css';
 
 
-const SignIn = ({setIsLoggedIn}) => {
+const SignIn = ({changeLoggedInState}) => {
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        setIsLoggedIn(true)
-        console.log("hiiii")    
+        e.preventDefault()
+        // setIsLoggedIn(true)
+        changeLoggedInState()
+        console.log("wowww")    
     }
 
     const handleChange = () => {
@@ -16,16 +18,15 @@ const SignIn = ({setIsLoggedIn}) => {
     
     return(
         <div>
-            <form className="signIn" onSubmit={handleSubmit}>
+            <form className="signIn" name="signInForm" onSubmit={handleSubmit}>
                 <label htmlFor="name"/>
-                <input type="text" id="name" placeholder="Full name" value="" onChange={handleChange}/>
+                <input type="text" id="name" placeholder="FullName"  onChange={handleChange}/>
                 <label htmlFor="email"/>
-                <input type="text" id="email" placeholder="Email Address" value="" onChange={handleChange}/>
-                <label htmlFor="signinButton"/>
-                <input type="submit" id="signinButton" name="signinButton"/>
+                <input type="text" id="email" placeholder="EmailAddress"  onChange={handleChange}/>
+                <button type="submit"></button>
             </form>
             <div>
-                <a href='./Register'>Register</a>
+                <Link to='./Register'>Register</Link>
             </div>
         </div>
     )

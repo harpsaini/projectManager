@@ -11,16 +11,21 @@ const App = () => {
 
   const[isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const changeLoggedInState = () => {
+    setIsLoggedIn(true)
+  }
+
   return (
     <Router>
       <div className="App">
         <header>
           <nav>
             <h1>Project Manager</h1>
+            <Link to="/loggedin">Continue without login</Link>
           </nav>
         </header>
         <Routes>
-            <Route exact path='/' element={<SignIn/>} setIsLoggedIn={setIsLoggedIn}/>
+            <Route exact path='/' element={<SignIn/>} changeLoggedInState = {changeLoggedInState}/>
             <Route path='/register' element={<Register/>} />
             <Route path='/loggedin' element={<LoggedIn/>} />
          </Routes>

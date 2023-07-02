@@ -13,6 +13,7 @@
 
 .signIn input, .signIn button{
     background-color:blanchedalmond;
+    width: 75%;
 }
 
 form{
