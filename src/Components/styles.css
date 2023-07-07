@@ -26,6 +26,7 @@ input{
     background-color: aliceblue;
     min-height: 2rem;
     outline: none;
+    max-width: 90%;
 }
 
 .mainscreen{
@@ -33,7 +34,7 @@ input{
     width: 90%;
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 auto;
 
 }
@@ -51,7 +52,7 @@ input{
 
 .bucketHeading{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 

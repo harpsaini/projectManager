@@ -3,29 +3,44 @@ import './styles.css'
 import { useState } from 'react'
 
 
-const ToDo = ()=>{
+const ToDo = () => {
 
     const [ToDoList, setToDoList] = useState([])
 
 // function that adds a new item to the list. 
-   const handleAddingListItem = () =>{
-    setToDoList(current=>[...current,{type:"text", value: ""}] )
+    const handleAddingListItem = () =>{
+        setToDoList(current=>[...current,{type:"text", value: ""}] )
     }
 
-    const handleDragging = () => {
-        console.log("dragged")
-   }
+    const handleDragStart = (e) => {
+        e.preventDefault();
+        //keep track of the item being dragged
+        let indexOfItemDragged = e.target.id;
+        console.log(indexOfItemDragged);
+        // keep track  of dragging initial and final place
+            //remove from inital
+           
+        const newArr = ToDoList.filter((item)=>{ 
+            console.log(item.key)
+            item.key = indexOfItemDragged
+        })
+
+        // setToDoList(newArr)
+        //add to destination
+        // console.log(ToDoList)
+    }
+    
 
    // this function is takes the value of the input and enters it at the correct index in the state object
-   const handleChange = (e) => {
-    e.preventDefault()
-    const index = e.target.id;
-    setToDoList((current) => {
-      const newArr = [...current];
-      newArr[index].value = e.target.value;
-      return newArr;
-    });
-   }
+    const handleChange = (e) => {
+        e.preventDefault()
+        const index = e.target.id;
+        setToDoList((current) => {
+            const newArr = [...current];
+            newArr[index].value = e.target.value;
+            return newArr;
+        });
+    }
 
     return(
         <div className='bucketStyles'>
@@ -37,7 +52,7 @@ const ToDo = ()=>{
                 {
                   ToDoList.map((item,index)=>{
                     return(
-                        <li draggable="true" onDrag={handleDragging} key={index}> 
+                        <li draggable="true" onDragStart={handleDragStart} id={index}  key={index}> 
                             <label htmlFor={item.value}></label>
                             <input 
                             type="text" 
