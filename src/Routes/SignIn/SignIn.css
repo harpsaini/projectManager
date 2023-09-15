@@ -1,0 +1,31 @@
+
+.SignInPage{
+    display: flex;
+    height: 400px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1rem;
+    /* border: 2px solid green; */
+}
+
+
+.signInForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    /* background-color: lightblue  */
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+.signInForm input, .signInForm button{
+    background-color:rgb(205, 172, 205);
+    border-radius: 50px;
+    width: 75%;
+    text-align: center;
+}
+

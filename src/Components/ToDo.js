@@ -3,7 +3,7 @@ import './styles.css'
 import { useState } from 'react'
 
 
-const ToDo = () => {
+const ToDo = ()=>{
 
     const [ToDoList, setToDoList] = useState([])
 
@@ -20,7 +20,11 @@ const ToDo = () => {
         // keep track  of dragging initial and final place
             //remove from inital
            
+<<<<<<< HEAD
         const newArr = ToDoList.filter((item)=>{ 
+=======
+     const newArr = ToDoList.filter((item)=>{ 
+>>>>>>> routing
             console.log(item.key)
             item.key = indexOfItemDragged
         })
