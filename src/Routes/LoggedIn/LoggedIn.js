@@ -8,7 +8,7 @@ const LoggedIn = () => {
 
     return(
       <>
-        <Link to="/"><p>Sign Out</p></Link>
+        <Link to="/">Sign Out</Link>
         <ul className='mainscreen'>  
           <li><ToDo/></li>
           <li><InProgress/></li>

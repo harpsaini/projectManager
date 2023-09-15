@@ -11,10 +11,6 @@ const App = () => {
 
   const[isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const changeLoggedInState = () => {
-    setIsLoggedIn(true)
-  }
-
   return (
     <Router>
       <div className="App">
@@ -25,7 +21,7 @@ const App = () => {
           </nav>
         </header>
         <Routes>
-            <Route exact path='/' element={<SignIn/>} changeLoggedInState = {changeLoggedInState}/>
+            <Route exact path='/' element={!isLoggedIn?<SignIn setIsLoggedIn= {setIsLoggedIn}/>:<LoggedIn/>} />
             <Route path='/register' element={<Register/>} />
             <Route path='/loggedin' element={<LoggedIn/>} />
          </Routes>
